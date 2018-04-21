@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorsExport", "DoorsExport\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorsExport.Model", "DoorsExport.Model\DoorsExport.Model.csproj", "{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorsExport.Data", "DoorsExport.Data\DoorsExport.Data.csproj", "{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

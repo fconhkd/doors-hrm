@@ -19,7 +19,7 @@ namespace DoorsExport
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            using (var conexaoFireBird = FireBirdDao.getInstancia().getConexao())
+            using (var conexaoFireBird = FirebirdDAO.getInstancia().getConexao())
             {
                 try
                 {
@@ -77,7 +77,7 @@ namespace DoorsExport
                                       INNER JOIN TABFPSIND ON(TABFPFUNC.SINDI_FUNC = TABFPSIND.CODIG_SIND)
                                       INNER JOIN TABGREMPR ON(TABFPFUNC.EMPRE_FUNC = TABGREMPR.CODIG_EMPR)
                                       INNER JOIN TABFPLOCA ON(TABFPFUNC.EMPRE_FUNC = TABFPLOCA.EMPRE_LOCA)
-                                      AND(TABFPFUNC.LOCAL_FUNC = TABFPLOCA.CODIG_LOCA)
+                                                          AND(TABFPFUNC.LOCAL_FUNC = TABFPLOCA.CODIG_LOCA)
                                       INNER JOIN TABGRMUNI TABGRMUNI_1 ON(TABFPFUNC.MUNIC_FUNC = TABGRMUNI_1.CODIG_MUNI)
                                       INNER JOIN TABGRMUNI LCNAS_DESC ON(TABFPFUNC.LCNAS_FUNC = LCNAS_DESC.CODIG_MUNI)
                                     WHERE

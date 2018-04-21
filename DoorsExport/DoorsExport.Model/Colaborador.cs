@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DoorsExport.Model
 {
+    /// <summary>
+    /// Funcionário ou empregado
+    /// </summary>
     public class Colaborador
     {
 

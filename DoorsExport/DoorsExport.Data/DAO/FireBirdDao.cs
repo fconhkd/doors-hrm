@@ -10,20 +10,20 @@ namespace DoorsExport
     /// <summary>
 	/// Usa padrão Singleton para obter uma instancia do FireBird
 	/// </summary>
-    public class FireBirdDao
+    public class FirebirdDAO
     {
-        private static readonly FireBirdDao instanciaFireBird = new FireBirdDao();
+        private static readonly FirebirdDAO instanciaFireBird = new FirebirdDAO();
 
-        private FireBirdDao() { }
+        private FirebirdDAO() { }
 
-        public static FireBirdDao getInstancia()
+        public static FirebirdDAO getInstancia()
         {
             return instanciaFireBird;
         }
 
         public FbConnection getConexao()
         {
-            string conn = ConfigurationManager.ConnectionStrings["FireBirdConnectionString"].ToString();
+            string conn = ConfigurationManager.ConnectionStrings["connectionStringFirebird"].ToString();
             return new FbConnection(conn);
         }
     }
