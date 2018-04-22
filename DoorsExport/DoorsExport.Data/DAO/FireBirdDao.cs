@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using FirebirdSql.Data.FirebirdClient;
@@ -12,16 +13,16 @@ namespace DoorsExport
 	/// </summary>
     public class FirebirdDAO
     {
-        private static readonly FirebirdDAO instanciaFireBird = new FirebirdDAO();
+        private static readonly FirebirdDAO instancia = new FirebirdDAO();
 
         private FirebirdDAO() { }
 
-        public static FirebirdDAO getInstancia()
+        public static FirebirdDAO GetInstancia()
         {
-            return instanciaFireBird;
+            return instancia;
         }
 
-        public FbConnection getConexao()
+        public IDbConnection GetConexao()
         {
             string conn = ConfigurationManager.ConnectionStrings["connectionStringFirebird"].ToString();
             return new FbConnection(conn);
