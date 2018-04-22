@@ -2,12 +2,12 @@
 using DoorsExport.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DoorsExport.Data.Business
 {
+    /// <summary>
+    /// Centralizar as regras de negocio de <see cref="Empresa"/>
+    /// </summary>
     public class EmpresaBusiness : IDisposable
     {
         private EmpresaDAO dao = new EmpresaDAO();
@@ -25,8 +25,7 @@ namespace DoorsExport.Data.Business
         {
             return dao.GetAll();
         }
-
-
+        
         /// <summary>
         /// Obter a empresa do sistema doors
         /// </summary>
@@ -47,6 +46,11 @@ namespace DoorsExport.Data.Business
             return dao.GetLocalAll();
         }
 
+        /// <summary>
+        /// Obter uma empresa armazenada localmente pelo seu codigo
+        /// </summary>
+        /// <param name="codigo">codigo a ser pesquisada</param>
+        /// <returns></returns>
         private Empresa GetLocal(int codigo)
         {
             return dao.GetLocal(codigo);

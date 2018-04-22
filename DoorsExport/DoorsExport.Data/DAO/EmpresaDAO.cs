@@ -10,11 +10,10 @@ using System.Threading.Tasks;
 namespace DoorsExport.Data.DAO
 {
     /// <summary>
-    /// 
+    /// Centralizar o acesso a dados de <see cref="Empresa"/>
     /// </summary>
     internal class EmpresaDAO
     {
-
         /// <summary>
         /// Obter uma empresa do sistema doors
         /// </summary>

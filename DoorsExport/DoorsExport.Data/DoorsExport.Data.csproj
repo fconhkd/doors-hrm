@@ -55,6 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\SindicatoBusiness.cs" />
+    <Compile Include="Business\LocalDeTrabalhoBusiness.cs" />
+    <Compile Include="Business\ColaboradorBusiness.cs" />
+    <Compile Include="Business\CboBusiness.cs" />
+    <Compile Include="Business\CargoBusiness.cs" />
     <Compile Include="Business\EmpresaBusiness.cs" />
     <Compile Include="DAO\CargoDAO.cs" />
     <Compile Include="DAO\CboDAO.cs" />
@@ -62,6 +67,7 @@
     <Compile Include="DAO\ConnectionDAO.cs" />
     <Compile Include="DAO\EmpresaDAO.cs" />
     <Compile Include="DAO\LocalDeTrabalhoDAO.cs" />
+    <Compile Include="DAO\SindicatoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
