@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace DoorsExport.Data.Business
 {
-    public class EmpresaBusiness
+    public class EmpresaBusiness : IDisposable
     {
         private EmpresaDAO dao = new EmpresaDAO();
+
+        public void Dispose()
+        {
+
+        }
 
         /// <summary>
         /// Obter uma lista com todas as empresas cadastradas
@@ -20,6 +25,7 @@ namespace DoorsExport.Data.Business
         {
             return dao.GetAll();
         }
+
 
         /// <summary>
         /// Obter a empresa do sistema doors
@@ -36,9 +42,35 @@ namespace DoorsExport.Data.Business
         /// Obter a lista de empresas já cadastradas localmente
         /// </summary>
         /// <returns></returns>
-        public IList<Empresa> GetLocalAll()
+        public IList<Empresa> GetLocal()
         {
-            throw new NotImplementedException();
+            return dao.GetLocalAll();
         }
+
+        private Empresa GetLocal(int codigo)
+        {
+            return dao.GetLocal(codigo);
+        }
+
+        /// <summary>
+        /// Salva o registro  no banco local
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <returns></returns>
+        public void Savelocal(int codigo)
+        {
+            var e = GetLocal(codigo);
+            if (e != null)
+            {
+                e = Get(codigo);
+                dao.UpdateLocal(e);
+            }
+            else
+            {
+                e = Get(codigo);
+                if (e != null) dao.InsertLocal(e);
+            }
+        }
+
     }
 }

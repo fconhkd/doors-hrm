@@ -16,19 +16,23 @@ namespace DoorsExport.UI
         public FrmEmpresa()
         {
             InitializeComponent();
+            atualizarGridView();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var numero = int.Parse(numericUpDown1.Value.ToString());
-            var result = new EmpresaBusiness().Get(numero);
+            new EmpresaBusiness().Savelocal(numero);
+
+            atualizarGridView();numericUpDown1.Value = 0;
+
         }
 
         void atualizarGridView()
         {
             using (var empBuss = new EmpresaBusiness())
             {
-                dataGridView1.DataSource = empBuss.GetLocalAll();
+                dataGridView1.DataSource = empBuss.GetLocal();
             }
         }
     }

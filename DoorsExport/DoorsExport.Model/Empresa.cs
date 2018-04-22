@@ -33,9 +33,5 @@ namespace DoorsExport.Model
         /// </summary>
         public string IE { get; set; }
 
-        /// <summary>
-        /// Controla o estado da empresa, se verdadeiro os dados serão sincronizados
-        /// </summary>
-        public bool Sincronizar { get; set; }
     }
 }
