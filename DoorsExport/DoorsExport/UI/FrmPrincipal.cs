@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DoorsExport.UI;
 using FirebirdSql.Data.FirebirdClient;
 
 namespace DoorsExport
@@ -101,5 +102,11 @@ namespace DoorsExport
             //}
         }
 
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var frm2 = new FrmEmpresa();
+            frm2.MdiParent = this;
+            frm2.Show();
+        }
     }
 }

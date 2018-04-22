@@ -73,11 +73,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\FirebirdDAO.cs" />
+    <Compile Include="Business\EmpresaBusiness.cs" />
+    <Compile Include="DAO\ConnectionDAO.cs" />
+    <Compile Include="DAO\EmpresaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Business\" />
+    <ProjectReference Include="..\DoorsExport.Model\DoorsExport.Model.csproj">
+      <Project>{16fe07e3-6e88-4df2-bba8-e02ce06212d8}</Project>
+      <Name>DoorsExport.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
