@@ -29,5 +29,14 @@ namespace DoorsExport.Data.Business
         {
             return dao.Get(codigo);
         }
+
+        /// <summary>
+        /// Obter todos os registros
+        /// </summary>
+        /// <returns></returns>
+        public IList<CBO> Get()
+        {
+            return dao.GetAll();
+        }
     }
 }
