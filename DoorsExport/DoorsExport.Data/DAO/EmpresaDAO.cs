@@ -62,7 +62,12 @@ namespace DoorsExport.Data.DAO
             }
         }
 
-
+        #region Local
+        /// <summary>
+        /// Obter uma empresa armazenda locamente pelo seu codigo
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <returns></returns>
         internal Empresa GetLocal(int codigo)
         {
             using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
@@ -117,5 +122,20 @@ namespace DoorsExport.Data.DAO
                 arquivo.Update(e);
             }
         }
+
+        /// <summary>
+        /// Excluir um registro local
+        /// </summary>
+        /// <param name="codigo"></param>
+        internal void DeleteLocal(int codigo)
+        {
+            using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+            {
+                var arquivo = db.GetCollection<Empresa>("empresas");
+
+                arquivo.Delete(codigo);
+            }
+        }
+        #endregion
     }
 }

@@ -56,8 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\EmpresaBusiness.cs" />
+    <Compile Include="DAO\CargoDAO.cs" />
+    <Compile Include="DAO\CboDAO.cs" />
+    <Compile Include="DAO\ColaboradorDAO.cs" />
     <Compile Include="DAO\ConnectionDAO.cs" />
     <Compile Include="DAO\EmpresaDAO.cs" />
+    <Compile Include="DAO\LocalDeTrabalhoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
