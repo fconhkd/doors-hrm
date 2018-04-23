@@ -21,8 +21,13 @@ namespace DoorsExport.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //var col = new ColaboradorBusiness().Get(113, 5375);
+            var col = new ColaboradorBusiness().Get(113);
+            var fabiano = new ColaboradorBusiness().Get(113,5375);
 
+            var cargos = new CargoBusiness().Get();
+            var cbos = new CboBusiness().Get();
+            var locais = new LocalDeTrabalhoBusiness().Get(113);
+            var sindicatos = new SindicatoBusiness().Get();
 
             var numero = int.Parse(numericUpDown1.Value.ToString());
             new EmpresaBusiness().Savelocal(numero);

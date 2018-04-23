@@ -26,7 +26,7 @@ namespace DoorsExport.Data.DAO
                         FROM
                               TABFPCBO
                         WHERE
-                              TABFPCBO.CODIG_CARG = @Codigo";
+                              TABFPCBO.CODIG_CBO = @Codigo";
 
             using (var db = ConnectionDAO.GetInstancia().GetFirebirdConnection())
             {
