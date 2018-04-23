@@ -42,7 +42,7 @@ namespace DoorsExport.Data.DAO
         {
             var query = @"SELECT 
                               TABFPCBO.CODIG_CBO as Codigo,
-                              TABFPCBO.DESCR_CBO as Descricao,
+                              TABFPCBO.DESCR_CBO as Descricao
                         FROM
                               TABFPCBO";
 

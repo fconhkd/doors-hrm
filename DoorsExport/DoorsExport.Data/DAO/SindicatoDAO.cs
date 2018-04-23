@@ -53,7 +53,7 @@ namespace DoorsExport.Data.DAO
             var query = @"SELECT 
                               TABFPSIND.CODIG_SIND as Codigo,
                               TABFPSIND.DESCR_SIND as Descricao,
-                              TABFPSIND.NOCGC_SIND as CNPJ
+                              TABFPSIND.NOCGC_SIND as CNPJ,
                               TABFPSIND.NODDD_SIND as Ddd,
                               TABFPSIND.NOTEL_SIND as Telefone,
                               TABFPSIND.TPEND_SIND as TipoEndereco,
@@ -62,7 +62,7 @@ namespace DoorsExport.Data.DAO
                               TABFPSIND.COMPL_SIND as Complemento,
                               TABFPSIND.BAIRR_SIND as Bairro,
                               TABFPSIND.MUNIC_SIND as Municipio,
-                              TABFPSIND.NOCEP_SIND as CEP,
+                              TABFPSIND.NOCEP_SIND as CEP
                         FROM
                               TABFPSIND";
 
