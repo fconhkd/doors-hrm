@@ -21,6 +21,9 @@ namespace DoorsExport.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var col = new ColaboradorBusiness().Get(113, 5375);
+
+
             var numero = int.Parse(numericUpDown1.Value.ToString());
             new EmpresaBusiness().Savelocal(numero);
 
