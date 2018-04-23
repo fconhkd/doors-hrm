@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DoorsWeb", "DoorsWeb\", "{F3312762-0936-4C5E-AECD-E6847761546F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7"
+		ProjectReferences = "{16fe07e3-6e88-4df2-bba8-e02ce06212d8}|DoorsExport.Model.dll;{50ffbd85-74ed-49a4-9f7b-9cb39d1eb256}|DoorsExport.Data.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59854"
+		Debug.AspNetCompiler.PhysicalPath = "DoorsWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59854\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.KeyFile = "..\..\..\..\Desktop\Doors.snk"
+		Debug.AspNetCompiler.DelaySign = "false"
+		Debug.AspNetCompiler.AllowPartiallyTrustedCallers = "false"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59854"
+		Release.AspNetCompiler.PhysicalPath = "DoorsWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59854\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.KeyFile = "..\..\..\..\Desktop\Doors.snk"
+		Release.AspNetCompiler.DelaySign = "false"
+		Release.AspNetCompiler.AllowPartiallyTrustedCallers = "false"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59854"
+		SlnRelativePath = "DoorsWeb\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorsExport.Model", "..\DoorsExport\DoorsExport.Model\DoorsExport.Model.csproj", "{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorsExport.Data", "..\DoorsExport\DoorsExport.Data\DoorsExport.Data.csproj", "{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3312762-0936-4C5E-AECD-E6847761546F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3312762-0936-4C5E-AECD-E6847761546F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3312762-0936-4C5E-AECD-E6847761546F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3312762-0936-4C5E-AECD-E6847761546F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16FE07E3-6E88-4DF2-BBA8-E02CE06212D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50FFBD85-74ED-49A4-9F7B-9CB39D1EB256}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3172FB36-B3CF-4209-8039-0949B11235AF}
+	EndGlobalSection
+EndGlobal
