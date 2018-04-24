@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 
 /// <summary>
 /// Summary description for ConnectionDAO
@@ -29,7 +31,7 @@ public class ConnectionDAO
 
     public LiteDatabase GetLiteConnection()
     {
-        string conn = ConfigurationManager.ConnectionStrings["LiteDB"].ToString();
-        return new LiteDatabase(conn);
+        //string conn = ConfigurationManager.ConnectionStrings["LiteDB"].ToString();
+        return new LiteDatabase(HostingEnvironment.MapPath("/App_Data/Database.db"));
     }
 }

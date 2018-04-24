@@ -8,6 +8,7 @@ namespace DoorsExport.Model
     /// <summary>
     /// Funcionário ou empregado
     /// </summary>
+    [Serializable]
     public class Colaborador
     {
         public int EMPRESA { get; set; }
