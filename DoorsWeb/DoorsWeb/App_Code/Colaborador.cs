@@ -53,12 +53,16 @@ public class Colaborador : System.Web.Services.WebService
         {
             var arquivo = db.GetCollection<DoorsExport.Model.Colaborador>("colaboradores");
 
-            if (true)
+            var col = arquivo.FindById(colaborador.Id);
+            if (col != null)
             {
-
+                arquivo.Update(colaborador);
+            }
+            else
+            {
+                arquivo.Insert(colaborador);
             }
 
-            var novo = arquivo.Insert(colaborador);
         }
     }
 

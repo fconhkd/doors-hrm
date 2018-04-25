@@ -12,8 +12,9 @@ namespace DoorsExport.Model
     [Serializable]
     public class Colaborador
     {
-        public int EMPRESA { get; set; }
         [BsonId]
+        public long Id { get; set; }
+        public int EMPRESA { get; set; }
         public int CODIGO { get; set; }
         public string NOME { get; set; }
         public DateTime ADMISSAO { get; set; }
