@@ -30,7 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMenuEmpresa = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,6 +41,8 @@
             this.tsStatus3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsStatus4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsStatus5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsMenuSync = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,17 +61,19 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
+            this.tsMenuEmpresa,
+            this.toolStripSeparator2,
+            this.tsMenuSync});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
             this.toolStripMenuItem1.Text = "&Cadastro";
             // 
-            // toolStripMenuItem2
+            // tsMenuEmpresa
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "&Empresa";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.tsMenuEmpresa.Name = "tsMenuEmpresa";
+            this.tsMenuEmpresa.Size = new System.Drawing.Size(180, 22);
+            this.tsMenuEmpresa.Text = "&Empresa";
+            this.tsMenuEmpresa.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // sobreToolStripMenuItem
             // 
@@ -142,6 +146,18 @@
             this.tsStatus5.Size = new System.Drawing.Size(54, 17);
             this.tsStatus5.Text = "tsStatus5";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // tsMenuSync
+            // 
+            this.tsMenuSync.Name = "tsMenuSync";
+            this.tsMenuSync.Size = new System.Drawing.Size(180, 22);
+            this.tsMenuSync.Text = "Sync";
+            this.tsMenuSync.Click += new System.EventHandler(this.tsMenuSync_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,7 +183,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tsMenuEmpresa;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -178,6 +194,8 @@
         private System.Windows.Forms.ToolStripStatusLabel tsStatus3;
         private System.Windows.Forms.ToolStripStatusLabel tsStatus4;
         private System.Windows.Forms.ToolStripStatusLabel tsStatus5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem tsMenuSync;
     }
 }
 

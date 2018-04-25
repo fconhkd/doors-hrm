@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://cardexpressbrasil.web2302.uni5.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://cardexpressbrasil.web2302.uni5.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cardexpressbrasil.web2302.uni5.net/">
+      <s:element name="Obter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterResult" type="tns:Colaborador" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Colaborador">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EMPRESA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CODIGO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ADMISSAO" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CARGO" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SINDICATO" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOCAL" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CENTROCUSTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPOENDERECO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ENDERECO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUMEROENDERECO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPLEMENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BAIRRO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MUNICIPIO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CEP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DDD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TELEFONE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATANASCIMENTO" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NACIONALIDADE" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOCALNASCIMENTO" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ESTADOCIVIL" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SEXO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AGENCIA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BANCO" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OBS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TITULOELEITOR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZONA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SECAO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTPS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESCISAO" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObterTodos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterTodosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterTodosResult" type="tns:ArrayOfColaborador" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfColaborador">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Colaborador" nillable="true" type="tns:Colaborador" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Inserir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="colaborador" type="tns:Colaborador" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirVarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="colaborador" type="tns:ArrayOfColaborador" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirVariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirVariosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObterSoapIn">
+    <wsdl:part name="parameters" element="tns:Obter" />
+  </wsdl:message>
+  <wsdl:message name="ObterSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterTodosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterTodos" />
+  </wsdl:message>
+  <wsdl:message name="ObterTodosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirSoapIn">
+    <wsdl:part name="parameters" element="tns:Inserir" />
+  </wsdl:message>
+  <wsdl:message name="InserirSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirVariosSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirVarios" />
+  </wsdl:message>
+  <wsdl:message name="InserirVariosSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirVariosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ColaboradorSoap">
+    <wsdl:operation name="Obter">
+      <wsdl:input message="tns:ObterSoapIn" />
+      <wsdl:output message="tns:ObterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterTodos">
+      <wsdl:input message="tns:ObterTodosSoapIn" />
+      <wsdl:output message="tns:ObterTodosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Inserir">
+      <wsdl:input message="tns:InserirSoapIn" />
+      <wsdl:output message="tns:InserirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirVarios">
+      <wsdl:input message="tns:InserirVariosSoapIn" />
+      <wsdl:output message="tns:InserirVariosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ColaboradorSoap" type="tns:ColaboradorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obter">
+      <soap:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/Obter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterTodos">
+      <soap:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/ObterTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inserir">
+      <soap:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/Inserir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirVarios">
+      <soap:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/InserirVarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ColaboradorSoap12" type="tns:ColaboradorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obter">
+      <soap12:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/Obter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterTodos">
+      <soap12:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/ObterTodos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inserir">
+      <soap12:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/Inserir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirVarios">
+      <soap12:operation soapAction="http://cardexpressbrasil.web2302.uni5.net/InserirVarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Colaborador">
+    <wsdl:port name="ColaboradorSoap" binding="tns:ColaboradorSoap">
+      <soap:address location="http://cardexpressbrasil.web2302.uni5.net/ws/Colaborador.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ColaboradorSoap12" binding="tns:ColaboradorSoap12">
+      <soap12:address location="http://cardexpressbrasil.web2302.uni5.net/ws/Colaborador.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

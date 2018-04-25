@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace DoorsExport.Model
     public class Colaborador
     {
         public int EMPRESA { get; set; }
+        [BsonId]
         public int CODIGO { get; set; }
         public string NOME { get; set; }
         public DateTime ADMISSAO { get; set; }

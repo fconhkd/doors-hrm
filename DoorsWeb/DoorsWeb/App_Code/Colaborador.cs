@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -40,13 +41,13 @@ public class Colaborador : System.Web.Services.WebService
         {
             var arquivo = db.GetCollection<DoorsExport.Model.Colaborador>("colaboradores");
 
-            var result = arquivo.FindAll().Where(x=>x.EMPRESA == empresa).ToList();
+            var result = arquivo.FindAll().Where(x => x.EMPRESA == empresa).ToList();
             return result;
         }
     }
 
     [WebMethod]
-    public bool Inserir(DoorsExport.Model.Colaborador colaborador)
+    public BsonValue Inserir(DoorsExport.Model.Colaborador colaborador)
     {
         using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
         {

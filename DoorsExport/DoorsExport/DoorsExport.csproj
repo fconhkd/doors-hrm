@@ -37,7 +37,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Doors.snk</AssemblyOriginatorKeyFile>
@@ -56,6 +56,8 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ColaboradorSOAP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UI\FrmEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +106,22 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ColaboradorSOAP\Colaborador.wsdl" />
+    <None Include="Connected Services\ColaboradorSOAP\DoorsExport.ColaboradorSOAP.Colaborador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorSOAP\DoorsExport.ColaboradorSOAP.InserirResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorSOAP\DoorsExport.ColaboradorSOAP.InserirVariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorSOAP\DoorsExport.ColaboradorSOAP.ObterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorSOAP\DoorsExport.ColaboradorSOAP.ObterTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Doors.snk" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -120,6 +143,27 @@
       <Project>{16fe07e3-6e88-4df2-bba8-e02ce06212d8}</Project>
       <Name>DoorsExport.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ColaboradorSOAP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ColaboradorSOAP\Colaborador.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ColaboradorSOAP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ColaboradorSOAP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ColaboradorSOAP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
