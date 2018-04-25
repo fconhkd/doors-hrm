@@ -47,14 +47,18 @@ public class Colaborador : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public BsonValue Inserir(DoorsExport.Model.Colaborador colaborador)
+    public void Inserir(DoorsExport.Model.Colaborador colaborador)
     {
         using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
         {
             var arquivo = db.GetCollection<DoorsExport.Model.Colaborador>("colaboradores");
 
-            var result = arquivo.Insert(colaborador);
-            return result;
+            if (true)
+            {
+
+            }
+
+            var novo = arquivo.Insert(colaborador);
         }
     }
 
@@ -65,9 +69,18 @@ public class Colaborador : System.Web.Services.WebService
         {
             var arquivo = db.GetCollection<DoorsExport.Model.Colaborador>("colaboradores");
 
-            var result = arquivo.InsertBulk(colaborador);
-            return result;
+            return arquivo.InsertBulk(colaborador);
         }
     }
 
+    [WebMethod]
+    public bool Atualizar(DoorsExport.Model.Colaborador colaborador)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.Colaborador>("colaboradores");
+
+            return arquivo.Update(colaborador);
+        }
+    }
 }

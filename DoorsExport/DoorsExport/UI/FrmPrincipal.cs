@@ -36,43 +36,44 @@ namespace DoorsExport
             
             var proxy = new ColaboradorSOAP.ColaboradorSoapClient();
 
-            //var result = proxy.ObterTodos(11);
+            var result = proxy.ObterTodos(113);
 
-            proxy.Inserir(new ColaboradorSOAP.Colaborador() {
-                EMPRESA = colaborador.EMPRESA,
-                CODIGO = colaborador.CODIGO,
-                ADMISSAO = colaborador.ADMISSAO,
-                CARGO = colaborador.CARGO,
-                SINDICATO = colaborador.SINDICATO,
-                LOCAL = colaborador.LOCAL,
-                CENTROCUSTO = colaborador.CENTROCUSTO,
-                TIPOENDERECO = colaborador.TIPOENDERECO,
-                ENDERECO = colaborador.ENDERECO,
-                NUMEROENDERECO = colaborador.NUMEROENDERECO,
-                COMPLEMENTO = colaborador.COMPLEMENTO,
-                BAIRRO = colaborador.BAIRRO,
-                MUNICIPIO = colaborador.MUNICIPIO,
-                CEP = colaborador.CEP,
-                DDD = colaborador.DDD,
-                TELEFONE = colaborador.TELEFONE,
-                DATANASCIMENTO = colaborador.DATANASCIMENTO,
-                NACIONALIDADE = colaborador.NACIONALIDADE,
-                LOCALNASCIMENTO = colaborador.LOCALNASCIMENTO,
-                ESTADOCIVIL = colaborador.ESTADOCIVIL,
-                SEXO = colaborador.SEXO,
-                CPF = colaborador.CPF,
-                PIS = colaborador.PIS,
-                RG = colaborador.PIS,
-                AGENCIA = colaborador.AGENCIA,
-                BANCO = colaborador.BANCO,
-                CONTA = colaborador.CONTA,
-                OBS = colaborador.OBS,
-                TITULOELEITOR = colaborador.TITULOELEITOR,
-                ZONA = colaborador.ZONA,
-                SECAO = colaborador.SECAO,
-                CTPS = colaborador.CTPS,
-                RESCISAO = colaborador.RESCISAO
-            });
+            //var result = proxy.Inserir(new ColaboradorSOAP.Colaborador()
+            //{
+            //    EMPRESA = colaborador.EMPRESA,
+            //    CODIGO = colaborador.CODIGO,
+            //    ADMISSAO = colaborador.ADMISSAO,
+            //    CARGO = colaborador.CARGO,
+            //    SINDICATO = colaborador.SINDICATO,
+            //    LOCAL = colaborador.LOCAL,
+            //    CENTROCUSTO = colaborador.CENTROCUSTO,
+            //    TIPOENDERECO = colaborador.TIPOENDERECO,
+            //    ENDERECO = colaborador.ENDERECO,
+            //    NUMEROENDERECO = colaborador.NUMEROENDERECO,
+            //    COMPLEMENTO = colaborador.COMPLEMENTO,
+            //    BAIRRO = colaborador.BAIRRO,
+            //    MUNICIPIO = colaborador.MUNICIPIO,
+            //    CEP = colaborador.CEP,
+            //    DDD = colaborador.DDD,
+            //    TELEFONE = colaborador.TELEFONE,
+            //    DATANASCIMENTO = colaborador.DATANASCIMENTO,
+            //    NACIONALIDADE = colaborador.NACIONALIDADE,
+            //    LOCALNASCIMENTO = colaborador.LOCALNASCIMENTO,
+            //    ESTADOCIVIL = colaborador.ESTADOCIVIL,
+            //    SEXO = colaborador.SEXO,
+            //    CPF = colaborador.CPF,
+            //    PIS = colaborador.PIS,
+            //    RG = colaborador.PIS,
+            //    AGENCIA = colaborador.AGENCIA,
+            //    BANCO = colaborador.BANCO,
+            //    CONTA = colaborador.CONTA,
+            //    OBS = colaborador.OBS,
+            //    TITULOELEITOR = colaborador.TITULOELEITOR,
+            //    ZONA = colaborador.ZONA,
+            //    SECAO = colaborador.SECAO,
+            //    CTPS = colaborador.CTPS,
+            //    RESCISAO = colaborador.RESCISAO
+            //});
 
         }
     }
