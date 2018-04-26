@@ -107,6 +107,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ColaboradorSOAP\Colaborador.wsdl" />
+    <None Include="Connected Services\ColaboradorSOAP\DoorsExport.ColaboradorSOAP.AtualizarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ColaboradorSOAP\DoorsExport.ColaboradorSOAP.Colaborador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -22,6 +22,8 @@ namespace DoorsExport.ColaboradorSOAP {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private long IdField;
+        
         private int EMPRESAField;
         
         private int CODIGOField;
@@ -69,7 +71,8 @@ namespace DoorsExport.ColaboradorSOAP {
         
         private System.Nullable<System.DateTime> DATANASCIMENTOField;
         
-        private System.Nullable<int> NACIONALIDADEField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NACIONALIDADEField;
         
         private System.Nullable<int> LOCALNASCIMENTOField;
         
@@ -122,6 +125,19 @@ namespace DoorsExport.ColaboradorSOAP {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
         public int EMPRESA {
             get {
                 return this.EMPRESAField;
@@ -134,7 +150,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public int CODIGO {
             get {
                 return this.CODIGOField;
@@ -147,7 +163,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string NOME {
             get {
                 return this.NOMEField;
@@ -160,7 +176,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public System.DateTime ADMISSAO {
             get {
                 return this.ADMISSAOField;
@@ -173,7 +189,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
         public System.Nullable<int> CARGO {
             get {
                 return this.CARGOField;
@@ -186,7 +202,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public System.Nullable<int> SINDICATO {
             get {
                 return this.SINDICATOField;
@@ -199,7 +215,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public System.Nullable<int> LOCAL {
             get {
                 return this.LOCALField;
@@ -212,7 +228,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string CENTROCUSTO {
             get {
                 return this.CENTROCUSTOField;
@@ -225,7 +241,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public string TIPOENDERECO {
             get {
                 return this.TIPOENDERECOField;
@@ -238,7 +254,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string ENDERECO {
             get {
                 return this.ENDERECOField;
@@ -251,7 +267,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public string NUMEROENDERECO {
             get {
                 return this.NUMEROENDERECOField;
@@ -264,7 +280,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
         public string COMPLEMENTO {
             get {
                 return this.COMPLEMENTOField;
@@ -277,7 +293,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
         public string BAIRRO {
             get {
                 return this.BAIRROField;
@@ -290,7 +306,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
         public string MUNICIPIO {
             get {
                 return this.MUNICIPIOField;
@@ -303,7 +319,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
         public string CEP {
             get {
                 return this.CEPField;
@@ -316,7 +332,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
         public string DDD {
             get {
                 return this.DDDField;
@@ -329,7 +345,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
         public string TELEFONE {
             get {
                 return this.TELEFONEField;
@@ -342,7 +358,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
         public System.Nullable<System.DateTime> DATANASCIMENTO {
             get {
                 return this.DATANASCIMENTOField;
@@ -355,20 +371,20 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public System.Nullable<int> NACIONALIDADE {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string NACIONALIDADE {
             get {
                 return this.NACIONALIDADEField;
             }
             set {
-                if ((this.NACIONALIDADEField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.NACIONALIDADEField, value) != true)) {
                     this.NACIONALIDADEField = value;
                     this.RaisePropertyChanged("NACIONALIDADE");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
         public System.Nullable<int> LOCALNASCIMENTO {
             get {
                 return this.LOCALNASCIMENTOField;
@@ -381,7 +397,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
         public System.Nullable<int> ESTADOCIVIL {
             get {
                 return this.ESTADOCIVILField;
@@ -394,7 +410,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
         public string SEXO {
             get {
                 return this.SEXOField;
@@ -407,7 +423,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
         public string CPF {
             get {
                 return this.CPFField;
@@ -420,7 +436,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
         public string PIS {
             get {
                 return this.PISField;
@@ -433,7 +449,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
         public string RG {
             get {
                 return this.RGField;
@@ -446,7 +462,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
         public int AGENCIA {
             get {
                 return this.AGENCIAField;
@@ -459,7 +475,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
         public System.Nullable<int> BANCO {
             get {
                 return this.BANCOField;
@@ -472,7 +488,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
         public string CONTA {
             get {
                 return this.CONTAField;
@@ -485,7 +501,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
         public string OBS {
             get {
                 return this.OBSField;
@@ -498,7 +514,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
         public string TITULOELEITOR {
             get {
                 return this.TITULOELEITORField;
@@ -511,7 +527,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
         public string ZONA {
             get {
                 return this.ZONAField;
@@ -524,7 +540,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=32)]
         public string SECAO {
             get {
                 return this.SECAOField;
@@ -537,7 +553,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=32)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=33)]
         public string CTPS {
             get {
                 return this.CTPSField;
@@ -550,7 +566,7 @@ namespace DoorsExport.ColaboradorSOAP {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=34)]
         public System.Nullable<System.DateTime> RESCISAO {
             get {
                 return this.RESCISAOField;
@@ -604,6 +620,13 @@ namespace DoorsExport.ColaboradorSOAP {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://cardexpressbrasil.web2302.uni5.net/InserirVarios", ReplyAction="*")]
         System.Threading.Tasks.Task<DoorsExport.ColaboradorSOAP.InserirVariosResponse> InserirVariosAsync(DoorsExport.ColaboradorSOAP.InserirVariosRequest request);
+        
+        // CODEGEN: Generating message contract since element name colaborador from namespace http://cardexpressbrasil.web2302.uni5.net/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://cardexpressbrasil.web2302.uni5.net/Atualizar", ReplyAction="*")]
+        DoorsExport.ColaboradorSOAP.AtualizarResponse Atualizar(DoorsExport.ColaboradorSOAP.AtualizarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://cardexpressbrasil.web2302.uni5.net/Atualizar", ReplyAction="*")]
+        System.Threading.Tasks.Task<DoorsExport.ColaboradorSOAP.AtualizarResponse> AtualizarAsync(DoorsExport.ColaboradorSOAP.AtualizarRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -800,17 +823,10 @@ namespace DoorsExport.ColaboradorSOAP {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://cardexpressbrasil.web2302.uni5.net/")]
+    [System.Runtime.Serialization.DataContractAttribute()]
     public partial class InserirResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool InserirResult;
-        
         public InserirResponseBody() {
-        }
-        
-        public InserirResponseBody(bool InserirResult) {
-            this.InserirResult = InserirResult;
         }
     }
     
@@ -879,6 +895,74 @@ namespace DoorsExport.ColaboradorSOAP {
         
         public InserirVariosResponseBody(int InserirVariosResult) {
             this.InserirVariosResult = InserirVariosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AtualizarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Atualizar", Namespace="http://cardexpressbrasil.web2302.uni5.net/", Order=0)]
+        public DoorsExport.ColaboradorSOAP.AtualizarRequestBody Body;
+        
+        public AtualizarRequest() {
+        }
+        
+        public AtualizarRequest(DoorsExport.ColaboradorSOAP.AtualizarRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://cardexpressbrasil.web2302.uni5.net/")]
+    public partial class AtualizarRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public DoorsExport.ColaboradorSOAP.Colaborador colaborador;
+        
+        public AtualizarRequestBody() {
+        }
+        
+        public AtualizarRequestBody(DoorsExport.ColaboradorSOAP.Colaborador colaborador) {
+            this.colaborador = colaborador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AtualizarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AtualizarResponse", Namespace="http://cardexpressbrasil.web2302.uni5.net/", Order=0)]
+        public DoorsExport.ColaboradorSOAP.AtualizarResponseBody Body;
+        
+        public AtualizarResponse() {
+        }
+        
+        public AtualizarResponse(DoorsExport.ColaboradorSOAP.AtualizarResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://cardexpressbrasil.web2302.uni5.net/")]
+    public partial class AtualizarResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AtualizarResult;
+        
+        public AtualizarResponseBody() {
+        }
+        
+        public AtualizarResponseBody(bool AtualizarResult) {
+            this.AtualizarResult = AtualizarResult;
         }
     }
     
@@ -966,12 +1050,11 @@ namespace DoorsExport.ColaboradorSOAP {
             return base.Channel.Inserir(request);
         }
         
-        public bool Inserir(DoorsExport.ColaboradorSOAP.Colaborador colaborador) {
+        public void Inserir(DoorsExport.ColaboradorSOAP.Colaborador colaborador) {
             DoorsExport.ColaboradorSOAP.InserirRequest inValue = new DoorsExport.ColaboradorSOAP.InserirRequest();
             inValue.Body = new DoorsExport.ColaboradorSOAP.InserirRequestBody();
             inValue.Body.colaborador = colaborador;
             DoorsExport.ColaboradorSOAP.InserirResponse retVal = ((DoorsExport.ColaboradorSOAP.ColaboradorSoap)(this)).Inserir(inValue);
-            return retVal.Body.InserirResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1009,6 +1092,31 @@ namespace DoorsExport.ColaboradorSOAP {
             inValue.Body = new DoorsExport.ColaboradorSOAP.InserirVariosRequestBody();
             inValue.Body.colaborador = colaborador;
             return ((DoorsExport.ColaboradorSOAP.ColaboradorSoap)(this)).InserirVariosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        DoorsExport.ColaboradorSOAP.AtualizarResponse DoorsExport.ColaboradorSOAP.ColaboradorSoap.Atualizar(DoorsExport.ColaboradorSOAP.AtualizarRequest request) {
+            return base.Channel.Atualizar(request);
+        }
+        
+        public bool Atualizar(DoorsExport.ColaboradorSOAP.Colaborador colaborador) {
+            DoorsExport.ColaboradorSOAP.AtualizarRequest inValue = new DoorsExport.ColaboradorSOAP.AtualizarRequest();
+            inValue.Body = new DoorsExport.ColaboradorSOAP.AtualizarRequestBody();
+            inValue.Body.colaborador = colaborador;
+            DoorsExport.ColaboradorSOAP.AtualizarResponse retVal = ((DoorsExport.ColaboradorSOAP.ColaboradorSoap)(this)).Atualizar(inValue);
+            return retVal.Body.AtualizarResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<DoorsExport.ColaboradorSOAP.AtualizarResponse> DoorsExport.ColaboradorSOAP.ColaboradorSoap.AtualizarAsync(DoorsExport.ColaboradorSOAP.AtualizarRequest request) {
+            return base.Channel.AtualizarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<DoorsExport.ColaboradorSOAP.AtualizarResponse> AtualizarAsync(DoorsExport.ColaboradorSOAP.Colaborador colaborador) {
+            DoorsExport.ColaboradorSOAP.AtualizarRequest inValue = new DoorsExport.ColaboradorSOAP.AtualizarRequest();
+            inValue.Body = new DoorsExport.ColaboradorSOAP.AtualizarRequestBody();
+            inValue.Body.colaborador = colaborador;
+            return ((DoorsExport.ColaboradorSOAP.ColaboradorSoap)(this)).AtualizarAsync(inValue);
         }
     }
 }

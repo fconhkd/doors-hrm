@@ -55,11 +55,12 @@ namespace DoorsExport.Data.DAO
                                 TABFPFUNC.ZONAF_FUNC AS ZONA,
                                 TABFPFUNC.SECAO_FUNC AS SECAO,
                                 TABFPFUNC.NUMCP_FUNC AS CTPS,
-                                TABFPRESC.DTRES_RESC AS RESCISAO
+                                (SELECT FIRST 1 TABFPRESC.DTRES_RESC 
+                                    FROM TABFPRESC
+  	                                WHERE  TABFPRESC.EMPRE_RESC = TABFPFUNC.EMPRE_FUNC AND
+      	                                   TABFPRESC.FUNCI_RESC = TABFPFUNC.CODIG_FUNC) AS RESCISAO
                             FROM
                                 TABFPFUNC
-                                LEFT OUTER JOIN TABFPRESC ON (TABFPFUNC.EMPRE_FUNC = TABFPRESC.EMPRE_RESC)
-                                AND (TABFPFUNC.CODIG_FUNC = TABFPRESC.FUNCI_RESC)
                             WHERE
                                 TABFPFUNC.EMPRE_FUNC = @Empresa and
                                 TABFPFUNC.CODIG_FUNC = @Codigo";
@@ -111,11 +112,12 @@ namespace DoorsExport.Data.DAO
                                 TABFPFUNC.ZONAF_FUNC AS ZONA,
                                 TABFPFUNC.SECAO_FUNC AS SECAO,
                                 TABFPFUNC.NUMCP_FUNC AS CTPS,
-                                TABFPRESC.DTRES_RESC AS RESCISAO
+                                (SELECT FIRST 1 TABFPRESC.DTRES_RESC 
+                                    FROM TABFPRESC
+  	                                WHERE  TABFPRESC.EMPRE_RESC = TABFPFUNC.EMPRE_FUNC AND
+      	                                   TABFPRESC.FUNCI_RESC = TABFPFUNC.CODIG_FUNC) AS RESCISAO
                             FROM
                                 TABFPFUNC
-                                LEFT OUTER JOIN TABFPRESC ON (TABFPFUNC.EMPRE_FUNC = TABFPRESC.EMPRE_RESC)
-                                AND (TABFPFUNC.CODIG_FUNC = TABFPRESC.FUNCI_RESC)
                             WHERE
                                 TABFPRESC.DTRES_RESC = @DataDemissao";
 
@@ -166,17 +168,18 @@ namespace DoorsExport.Data.DAO
                                 TABFPFUNC.ZONAF_FUNC AS ZONA,
                                 TABFPFUNC.SECAO_FUNC AS SECAO,
                                 TABFPFUNC.NUMCP_FUNC AS CTPS,
-                                TABFPRESC.DTRES_RESC AS RESCISAO
+                                (SELECT FIRST 1 TABFPRESC.DTRES_RESC 
+                                    FROM TABFPRESC
+  	                                WHERE  TABFPRESC.EMPRE_RESC = TABFPFUNC.EMPRE_FUNC AND
+      	                                   TABFPRESC.FUNCI_RESC = TABFPFUNC.CODIG_FUNC) AS RESCISAO
                             FROM
                                 TABFPFUNC
-                                LEFT OUTER JOIN TABFPRESC ON (TABFPFUNC.EMPRE_FUNC = TABFPRESC.EMPRE_RESC)
-                                                         AND (TABFPFUNC.CODIG_FUNC = TABFPRESC.FUNCI_RESC)
                             WHERE
-                                TABFPRESC.DTADM_FUNC = @DataAdmissao";
+                                TABFPFUNC.DTADM_FUNC = @DataAdmissao";
 
             using (var db = ConnectionDAO.GetInstancia().GetFirebirdConnection())
             {
-                return db.Query<Colaborador>(query, new { @DataAdmissao = dataAdmissao }).ToList();
+                return db.Query<Colaborador>(query, new { @DataAdmissao = dataAdmissao.ToShortDateString() }).ToList();
             }
         }
 
@@ -221,11 +224,12 @@ namespace DoorsExport.Data.DAO
                                 TABFPFUNC.ZONAF_FUNC AS ZONA,
                                 TABFPFUNC.SECAO_FUNC AS SECAO,
                                 TABFPFUNC.NUMCP_FUNC AS CTPS,
-                                TABFPRESC.DTRES_RESC AS RESCISAO
+                                (SELECT FIRST 1 TABFPRESC.DTRES_RESC 
+                                    FROM TABFPRESC
+  	                                WHERE  TABFPRESC.EMPRE_RESC = TABFPFUNC.EMPRE_FUNC AND
+      	                                   TABFPRESC.FUNCI_RESC = TABFPFUNC.CODIG_FUNC) AS RESCISAO
                             FROM
                                 TABFPFUNC
-                                LEFT OUTER JOIN TABFPRESC ON (TABFPFUNC.EMPRE_FUNC = TABFPRESC.EMPRE_RESC)
-                                AND (TABFPFUNC.CODIG_FUNC = TABFPRESC.FUNCI_RESC)
                             WHERE
                                 TABFPFUNC.EMPRE_FUNC = @Empresa";
 

@@ -52,8 +52,8 @@ public class Colaborador : System.Web.Services.WebService
         using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
         {
             var arquivo = db.GetCollection<DoorsExport.Model.Colaborador>("colaboradores");
-
             var col = arquivo.FindById(colaborador.Id);
+
             if (col != null)
             {
                 arquivo.Update(colaborador);

@@ -32,7 +32,7 @@ namespace DoorsExport.Model
         public string DDD { get; set; }
         public string TELEFONE { get; set; }
         public DateTime? DATANASCIMENTO { get; set; }
-        public int? NACIONALIDADE { get; set; }
+        public string NACIONALIDADE { get; set; }
         public int? LOCALNASCIMENTO { get; set; }
         public int? ESTADOCIVIL { get; set; }
         public string SEXO { get; set; }
