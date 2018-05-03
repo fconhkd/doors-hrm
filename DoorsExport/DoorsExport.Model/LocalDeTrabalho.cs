@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,17 @@ namespace DoorsExport.Model
     public class LocalDeTrabalho
     {
         /// <summary>
+        /// Identificador unico de cada local
+        /// </summary>
+        /// <remarks>O mesmo que concatenr a Empresa e Codigo</remarks>
+        [BsonId]
+        public long Id { get; set; }
+
+        /// <summary>
         /// Codigo da empresa relacionada
         /// </summary>
         /// <remarks>mesmo que <see cref="Empresa.Codigo"/></remarks>
+        [BsonIndex]
         public int Empresa { get; set; }
 
         /// <summary>

@@ -13,18 +13,76 @@ using System.Web.Services;
 [System.Web.Script.Services.ScriptService]
 public class Empresa : System.Web.Services.WebService
 {
-
     public Empresa()
     {
-
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
 
     [WebMethod]
-    public string HelloWorld()
+    public DoorsExport.Model.Empresa Obter(int codigo)
     {
-        return "Hello World";
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.Empresa>("empresas");
+
+            var result = arquivo.FindAll().Where(x => x.Codigo == codigo).FirstOrDefault();
+            return result;
+        }
+    }
+
+    [WebMethod]
+    public List<DoorsExport.Model.Empresa> ObterTodos()
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.Empresa>("empresas");
+
+            var result = arquivo.FindAll().ToList();
+            return result;
+        }
+    }
+
+    [WebMethod]
+    public void Inserir(DoorsExport.Model.Empresa empresa)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.Empresa>("empresas");
+            var obj = arquivo.FindById(empresa.Codigo);
+
+            if (obj != null)
+            {
+                arquivo.Update(empresa);
+            }
+            else
+            {
+                arquivo.Insert(empresa);
+            }
+
+        }
+    }
+
+    [WebMethod]
+    public int InserirVarios(List<DoorsExport.Model.Empresa> colaborador)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.Empresa>("empresas");
+
+            return arquivo.InsertBulk(colaborador);
+        }
+    }
+
+    [WebMethod]
+    public bool Atualizar(DoorsExport.Model.Empresa empresa)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.Empresa>("empresas");
+
+            return arquivo.Update(empresa);
+        }
     }
 
 }

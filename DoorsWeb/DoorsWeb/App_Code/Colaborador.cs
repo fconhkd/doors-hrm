@@ -14,10 +14,8 @@ using System.Web.Services;
 [System.Web.Script.Services.ScriptService]
 public class Colaborador : System.Web.Services.WebService
 {
-
     public Colaborador()
     {
-
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
@@ -52,9 +50,9 @@ public class Colaborador : System.Web.Services.WebService
         using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
         {
             var arquivo = db.GetCollection<DoorsExport.Model.Colaborador>("colaboradores");
-            var col = arquivo.FindById(colaborador.Id);
+            var obj = arquivo.FindById(colaborador.Id);
 
-            if (col != null)
+            if (obj != null)
             {
                 arquivo.Update(colaborador);
             }
@@ -87,4 +85,5 @@ public class Colaborador : System.Web.Services.WebService
             return arquivo.Update(colaborador);
         }
     }
+
 }

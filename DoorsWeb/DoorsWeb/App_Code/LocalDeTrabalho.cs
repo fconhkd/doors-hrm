@@ -16,15 +16,75 @@ public class LocalDeTrabalho : System.Web.Services.WebService
 
     public LocalDeTrabalho()
     {
-
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
 
     [WebMethod]
-    public string HelloWorld()
+    public DoorsExport.Model.LocalDeTrabalho Obter(int empresa, int codigo)
     {
-        return "Hello World";
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.LocalDeTrabalho>("locais_trabalho");
+
+            var result = arquivo.FindAll().Where(x => x.Empresa == empresa && x.Codigo.Equals(codigo)).FirstOrDefault();
+            return result;
+        }
     }
+
+    [WebMethod]
+    public List<DoorsExport.Model.LocalDeTrabalho> ObterTodos(int empresa)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.LocalDeTrabalho>("locais_trabalho");
+
+            var result = arquivo.FindAll().Where(x => x.Empresa == empresa).ToList();
+            return result;
+        }
+    }
+
+    [WebMethod]
+    public void Inserir(DoorsExport.Model.LocalDeTrabalho local)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.LocalDeTrabalho>("locais_trabalho");
+            var obj = arquivo.FindById(local.Id);
+
+            if (obj != null)
+            {
+                arquivo.Update(local);
+            }
+            else
+            {
+                arquivo.Insert(local);
+            }
+
+        }
+    }
+
+    [WebMethod]
+    public int InserirVarios(List<DoorsExport.Model.LocalDeTrabalho> colaborador)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.LocalDeTrabalho>("locais_trabalho");
+
+            return arquivo.InsertBulk(colaborador);
+        }
+    }
+
+    [WebMethod]
+    public bool Atualizar(DoorsExport.Model.LocalDeTrabalho colaborador)
+    {
+        using (var db = ConnectionDAO.GetInstancia().GetLiteConnection())
+        {
+            var arquivo = db.GetCollection<DoorsExport.Model.LocalDeTrabalho>("locais_trabalho");
+
+            return arquivo.Update(colaborador);
+        }
+    }
+
 
 }
